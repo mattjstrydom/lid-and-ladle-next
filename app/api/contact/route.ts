@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -13,7 +11,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Valid email is required' }, { status: 400 })
     }
 
-    // Save to database
     await prisma.contactSubmission.create({
       data: {
         name: name || '',
@@ -23,7 +20,8 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // Send email via Resend
+    const resend = new Resend(process.env.RESEND_API_KEY)
+
     await resend.emails.send({
       from: 'Lid & Ladle Website <onboarding@resend.dev>',
       to: ['annelstrydom85@gmail.com'],
