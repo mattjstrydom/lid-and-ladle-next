@@ -25,7 +25,7 @@ export default function ProductCard({ product }: { product: ProductWithImages })
           />
         )}
       </div>
-      <div className="pt-3 pb-1">
+      <div className="px-3 pt-3 pb-4">
         <h3 className="text-sm font-medium leading-snug">{product.name}</h3>
         <p className="text-sm text-gray-700 mt-1">{formatPrice(product.price)} ZAR</p>
       </div>
