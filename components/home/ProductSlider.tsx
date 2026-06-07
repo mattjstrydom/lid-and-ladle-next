@@ -24,13 +24,13 @@ export default function ProductSlider({ products }: ProductSliderProps) {
     <section className="py-16 px-6 lg:px-16">
       <div className="max-w-screen-2xl mx-auto">
         <div className="text-center mb-4">
-          <h2 className="text-2xl font-normal mb-6">Our Infusion Mix Range</h2>
-          <p className="font-bold text-sm mb-1">Our Online Store Stock will be available soon!</p>
+          <h2 className="text-2xl font-normal mb-4">Our Infusion Mix Range</h2>
           <p className="text-sm text-gray-600">
-            Visit one of our stockists or contact us for private orders.
-          </p>
-          <p className="text-sm text-gray-600">
-            (Resellers @ discounted price, private orders min x6 items)
+            Click any product to learn more, or{' '}
+            <a href="/pages/contact" className="text-brand-primary hover:underline">
+              contact us
+            </a>{' '}
+            to place an order.
           </p>
         </div>
 

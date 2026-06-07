@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { ShoppingBag, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -43,26 +43,14 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Icons */}
-        <div className="flex items-center gap-4">
-          <Link
-            href="/cart"
-            aria-label="Cart"
-            className="relative text-brand-text hover:text-brand-primary transition-colors"
-          >
-            <ShoppingBag size={20} />
-            <span className="absolute -top-2 -right-2 bg-brand-primary text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
-              0
-            </span>
-          </Link>
-          <button
-            className="md:hidden text-brand-text"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+        {/* Mobile menu toggle */}
+        <button
+          className="md:hidden text-brand-text"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
 
       {/* Mobile Nav */}

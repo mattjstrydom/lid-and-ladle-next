@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { ProductModel, ProductImageModel } from '@/app/generated/prisma/models'
-import Badge from '@/components/ui/Badge'
 import { formatPrice } from '@/lib/utils'
 
 type ProductWithImages = ProductModel & { images: ProductImageModel[] }
@@ -24,11 +23,6 @@ export default function ProductCard({ product }: { product: ProductWithImages })
             style={{ objectFit: 'cover' }}
             className="group-hover:scale-105 transition-transform duration-500"
           />
-        )}
-        {!product.inStock && (
-          <div className="absolute top-3 left-3">
-            <Badge variant="sold-out">Sold out</Badge>
-          </div>
         )}
       </div>
       <div className="pt-3 pb-1">
