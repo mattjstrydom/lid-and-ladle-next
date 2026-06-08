@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
-      from: 'Lid & Ladle Website <onboarding@resend.dev>',
+      from: 'Lid & Ladle <hello@lidandladle.co.za>',
       to: ['annelstrydom85@gmail.com'],
       subject: `New contact form submission from ${name || 'Website visitor'}`,
       html: `
