@@ -9,4 +9,10 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   }
+  // Hyperdrive is free on the Workers Free plan (100,000 queries/day).
+  // DATABASE_URL is not yet present on this Worker (name checked only),
+  // and this connector cannot create Hyperdrive configs (API 403).
+  // After Matt adds DATABASE_URL and creates a Hyperdrive in the dashboard,
+  // paste its id here:
+  // "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "<hyperdrive id>" }]
 }
